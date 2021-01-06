@@ -14,7 +14,7 @@
 
           <div nz-row *ngIf="products">
             <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 12 }">
-              <div class="">{{products.length}} Product(s) found</div>
+              <div class="">{{ products.length }} Product(s) found</div>
             </div>
             <div nz-col align="right" [nzXs]="{ span: 12 }" [nzLg]="{ span: 12 }">
               <div class="">
@@ -23,9 +23,10 @@
                     <span>Order by</span>
                   </nz-space-item>
                   <nz-space-item>
-                    <nz-select ngModel="select" nzPlaceHolder="Choose">
-                      <nz-option nzValue="lowToHigh" nzLabel="Lowest to highest"></nz-option>
-                      <nz-option nzValue="highToLow" nzLabel="Highest to lowest"></nz-option>
+                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select OS" [(ngModel)]="selectedOS">
+                      <nz-option nzCustomContent nzLabel="Windows" nzValue="windows"><i nz-icon nzType="windows"></i> Windows</nz-option>
+                      <nz-option nzCustomContent nzLabel="Mac" nzValue="mac"><i nz-icon nzType="apple"></i> Mac</nz-option>
+                      <nz-option nzCustomContent nzLabel="Android" nzValue="android"><i nz-icon nzType="android"></i> Android </nz-option>
                     </nz-select>
                   </nz-space-item>
                 </nz-space>
