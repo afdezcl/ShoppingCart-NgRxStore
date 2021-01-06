@@ -7,3 +7,29 @@
     background: #0092ff;
     padding: 8px 0;
 }
+
+[nz-row] {
+    padding-bottom: .5rem;
+}
+
+nz-select {
+    margin: 0 8px 10px 0;
+}
+
+.card-data {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+  
+.card {
+    width: 40%;
+    height: 100px;
+    line-height: 100px;
+    background-color: grey;
+    margin: 10px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}

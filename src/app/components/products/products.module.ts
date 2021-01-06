@@ -4,6 +4,9 @@ import { ProductsComponent } from './products.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   imports: [
@@ -11,6 +14,9 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 
     NzCardModule,
     NzGridModule,
+    NzSelectModule,
+    NzSpaceModule,
+    NzButtonModule
     
   ],
   declarations: [

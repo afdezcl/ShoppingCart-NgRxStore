@@ -1,3 +1,9 @@
-<p>
-  product-card works!
-</p>
+<nz-card [nzCover]="coverTemplate" [nzActions]="[actionAdd]">
+  <nz-card-meta nzTitle="{{ product.title }}" nzDescription="{{ product.price }} €"></nz-card-meta>
+</nz-card>
+<ng-template #coverTemplate>
+  <img alt="product-image" src="{{ product.image }}" height="200"/>
+</ng-template>
+<ng-template #actionAdd>
+  <button nz-button nzType="primary">Add to cart</button>
+</ng-template>
