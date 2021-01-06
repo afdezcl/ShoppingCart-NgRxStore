@@ -2,16 +2,21 @@
   <div nz-row>
     <div nz-col [nzXs]="{ span: 22, offset: 1}" [nzLg]="{ span: 18, offset: 3}">
       <div nz-row>
-        <div nz-col align="middle" [nzXs]="{ span: 10, offset: 1}" [nzLg]="{ span: 4, offset: 1}">
+        <div nz-col align="middle" [nzXs]="{ span: 12 }" [nzLg]="{ span: 4, offset: 1}">
           <div class="inner-box">FILTERS</div>
         </div>
         <div nz-col [nzLg]="{ span: 16, offset: 1}">
+          <div nz-row class="spinner-wrapper" *ngIf="!products">
+            <div nz-col nzSpan="24" align="center">
+              <nz-spin nzSimple [nzSize]="'large'"></nz-spin>
+            </div>
+          </div>
 
-          <div nz-row>
-            <div nz-col [nzLg]="{ span: 12 }">
+          <div nz-row *ngIf="products">
+            <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 12 }">
               <div class="">{{products.length}} Product(s) found</div>
             </div>
-            <div nz-col align="right" [nzLg]="{ span: 12 }">
+            <div nz-col align="right" [nzXs]="{ span: 12 }" [nzLg]="{ span: 12 }">
               <div class="">
                 <nz-space>
                   <nz-space-item>
@@ -30,7 +35,8 @@
           </div>
 
           <div nz-row [nzGutter]="[16, 40]">
-            <div nz-col class="gutter-row" [nzXs]="{ span: 12 }" [nzLg]="{ span: 6 }" *ngFor="let singleProduct of products">
+            <div nz-col class="gutter-row" [nzXs]="{ span: 12 }" [nzMd]="{ span: 8 }" [nzLg]="{ span: 6 }"
+              *ngFor="let singleProduct of products">
               <app-product-card [product]="singleProduct"></app-product-card>
             </div>
           </div>

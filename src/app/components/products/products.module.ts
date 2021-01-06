@@ -7,6 +7,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzGridModule,
     NzSelectModule,
     NzSpaceModule,
-    NzButtonModule
+    NzButtonModule,
+    NzSpinModule
     
   ],
   declarations: [
