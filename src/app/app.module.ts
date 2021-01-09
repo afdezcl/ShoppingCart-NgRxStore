@@ -17,8 +17,11 @@ import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { CartModule } from './components/cart/cart.module';
-import { StoreModule } from '@ngrx/store';
+import { ActionReducer, ActionReducerMap, MetaReducer, StoreModule } from '@ngrx/store';
 import { ShoppingReducer } from './store/reducers/shopping.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { localStorageSync } from 'ngrx-store-localstorage';
 
 
 registerLocaleData(en);
@@ -27,6 +30,15 @@ const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
 };
 const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key]);
+
+
+
+// STORE
+export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+  return localStorageSync({keys: ['todos'], rehydrate: true})(reducer);
+}
+const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
+
 
 @NgModule({
   declarations: [
@@ -39,15 +51,17 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     BrowserAnimationsModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      shopping: ShoppingReducer
+      shopping: ShoppingReducer,
     }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
 
-    //App Modules
+    // App Modules
     ProductsModule,
-    CartModule
+    CartModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
 
 
-    //Ant design
+    // Ant design
     
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }, { provide: NZ_ICONS, useValue: icons } ],

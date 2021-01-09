@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/models/product.interface';
+import { DeleteItemAction } from 'src/app/store/actions/shopping.actions';
 import { AppState } from 'src/app/store/models/app-state.model';
 
 @Component({
@@ -26,5 +27,10 @@ export class CartComponent implements OnInit {
   toggleCollapsed(): void {
     this.isCollapsed = !this.isCollapsed;
   }
+
+  deleteItem(product: Product) {
+    this.store.dispatch(new DeleteItemAction(product.id));
+  }
+
 
 }
