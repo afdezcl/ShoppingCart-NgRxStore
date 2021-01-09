@@ -17,6 +17,8 @@ import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { CartModule } from './components/cart/cart.module';
+import { StoreModule } from '@ngrx/store';
+import { ShoppingReducer } from './store/reducers/shopping.reducer';
 
 
 registerLocaleData(en);
@@ -36,6 +38,9 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    StoreModule.forRoot({
+      shopping: ShoppingReducer
+    }),
 
     //App Modules
     ProductsModule,
