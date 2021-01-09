@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
+import { CartModule } from './components/cart/cart.module';
 
 
 registerLocaleData(en);
@@ -38,6 +39,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
 
     //App Modules
     ProductsModule,
+    CartModule
 
 
     //Ant design
