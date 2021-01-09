@@ -2,10 +2,20 @@
   <div nz-row>
     <div nz-col [nzXs]="{ span: 22, offset: 1}" [nzLg]="{ span: 18, offset: 3}">
       <div nz-row>
-        <div nz-col align="middle" [nzXs]="{ span: 12 }" [nzLg]="{ span: 4, offset: 1}">
-          <div class="inner-box">FILTERS</div>
+        <div nz-col [nzXs]="{ span: 24 }" [nzLg]="{ span: 4, offset: 1}">
+          <div class="">
+            <h3>Category:</h3>
+            <nz-checkbox-wrapper style="width: 100%;">
+              <div nz-row>
+                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="A">Men clothing</label></div>
+                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="B">Women clothing</label></div>
+                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="C">Jewelery</label></div>
+                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="D">Electronics</label></div>
+              </div>
+            </nz-checkbox-wrapper>
+          </div>
         </div>
-        <div nz-col [nzLg]="{ span: 16, offset: 1}">
+        <div nz-col [nzXs]="{ span: 24 }" [nzLg]="{ span: 16, offset: 1}">
           <div nz-row class="spinner-wrapper" *ngIf="!products">
             <div nz-col nzSpan="24" align="center">
               <nz-spin nzSimple [nzSize]="'large'"></nz-spin>
@@ -23,10 +33,9 @@
                     <span>Order by</span>
                   </nz-space-item>
                   <nz-space-item>
-                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select OS" [(ngModel)]="selectedOS">
-                      <nz-option nzCustomContent nzLabel="Windows" nzValue="windows"><i nz-icon nzType="windows"></i> Windows</nz-option>
-                      <nz-option nzCustomContent nzLabel="Mac" nzValue="mac"><i nz-icon nzType="apple"></i> Mac</nz-option>
-                      <nz-option nzCustomContent nzLabel="Android" nzValue="android"><i nz-icon nzType="android"></i> Android </nz-option>
+                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select" [(ngModel)]="selectedOS">
+                      <nz-option nzCustomContent nzLabel="Lowest to Highest" nzValue="Lowest to Highest">Lowest to Highest</nz-option>
+                      <nz-option nzCustomContent nzLabel="Highest to Lowest" nzValue="Highest to Lowest">Highest to Lowest</nz-option>
                     </nz-select>
                   </nz-space-item>
                 </nz-space>

@@ -8,6 +8,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
     NzSelectModule,
     NzSpaceModule,
     NzButtonModule,
-    NzSpinModule
+    NzSpinModule,
+    NzCheckboxModule
     
   ],
   declarations: [
