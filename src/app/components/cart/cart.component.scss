@@ -79,6 +79,18 @@ ul {
     }
 
     &-checkout > div > button {
-        width: 80%;        
+        width: 80%;   
+    }
+}
+
+.no-item-wrapper {
+    & > i {
+        font-size: 28pt;
+    }
+
+    & > h5 {
+        margin-top: 2rem;
+        font-size: 20pt;
+        color: azure;
     }
 }

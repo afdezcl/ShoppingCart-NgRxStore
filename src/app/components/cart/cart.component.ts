@@ -14,14 +14,14 @@ export class CartComponent implements OnInit {
 
 
   isCollapsed = false;
-  shoppingItems: Observable<Array<Product>>;
+  shoppingItems$: Observable<Array<Product>>;
 
   constructor(
     private store: Store<AppState>
   ) { }
 
   ngOnInit() {
-    this.shoppingItems = this.store.select(store => store.shopping);
+    this.shoppingItems$ = this.store.select(store => store.shopping);
   }
 
   toggleCollapsed(): void {
@@ -30,6 +30,12 @@ export class CartComponent implements OnInit {
 
   deleteItem(product: Product) {
     this.store.dispatch(new DeleteItemAction(product.id));
+  }
+
+  calculateTotalPrice() {
+    let totalPrice = 0;
+
+    return 1;
   }
 
 
