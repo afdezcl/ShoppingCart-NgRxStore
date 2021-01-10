@@ -17,10 +17,10 @@ export class ProductCardComponent implements OnInit {
     private store: Store<AppState>
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  addItem(product) {
+  addItem(product): void {
     this.store.dispatch(new AddItemAction(product));
   }
 

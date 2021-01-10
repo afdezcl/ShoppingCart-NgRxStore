@@ -15,11 +15,11 @@ export class ProductsComponent implements OnInit {
     private productService: ProductService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getProducts();
   }
 
-  getProducts() {
+  getProducts(): void {
     this.productService.getProducts()
       .subscribe((response: Product[]) => {
         console.log(response);

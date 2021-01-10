@@ -21,7 +21,7 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
     NzButtonModule,
     NzSpinModule,
     NzCheckboxModule
-    
+
   ],
   declarations: [
     ProductsComponent,

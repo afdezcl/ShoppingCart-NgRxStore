@@ -20,7 +20,7 @@ export class CartComponent implements OnInit {
     private store: Store<AppState>
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.shoppingItems$ = this.store.select(store => store.shopping);
   }
 
@@ -28,13 +28,11 @@ export class CartComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  deleteItem(product: Product) {
+  deleteItem(product: Product): void {
     this.store.dispatch(new DeleteItemAction(product.id));
   }
 
-  calculateTotalPrice() {
-    let totalPrice = 0;
-
+  calculateTotalPrice(): number {
     return 1;
   }
 
