@@ -6,6 +6,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzMenuModule,
     NzGridModule,
     NzIconModule,
-    NzButtonModule
+    NzButtonModule,
+    NzLayoutModule
   ],
   declarations: [
     CartComponent

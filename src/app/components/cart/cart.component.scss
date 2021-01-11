@@ -1,27 +1,5 @@
-.wrapper {
-    width: 440px;
-    height: 100%;
-    position: fixed;
-    z-index: 1;
-
-    & > button {
-        width: 60px;
-        height: 60px;
-    }
-}
-
-@media(max-width: 997.98px) {
-    .wrapper {
-        width: 100%;
-    }
-}
-
-ul {
-    height: 100%;
-}
-
 .item-container {
-    padding: 4rem 2rem 0 3rem;
+    padding: 2rem 2rem 0 2rem;
 
     &-details {
         padding-top: 1rem;
@@ -93,4 +71,44 @@ ul {
         font-size: 20pt;
         color: azure;
     }
+}
+
+.layout {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+}
+
+.title-sider {
+    margin-top: 2rem;
+
+    &-cart {
+        color: azure;
+        font-weight: bold;
+    }
+
+    & > div > i {
+        font-size: 25pt;
+        color: azure;
+    }
+}
+
+.trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+    position: absolute;
+    z-index: 2;
+    color: azure;
+}
+
+.trigger:hover {
+    color: #1890ff;
+}
+
+nz-header {
+    background:#061529;
+    padding: 0;
 }
