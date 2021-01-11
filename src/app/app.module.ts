@@ -21,6 +21,7 @@ import { ShoppingReducer } from './store/reducers/shopping.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { localStorageSync } from 'ngrx-store-localstorage';
+import { FilterCategoryPipe } from './ui-controls/pipes/filterCategory.pipe';
 
 
 registerLocaleData(en);

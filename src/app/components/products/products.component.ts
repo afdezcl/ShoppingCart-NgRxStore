@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/services/products/product.service';
 export class ProductsComponent implements OnInit {
 
   public products: Product[];
+  public categoriesSelected: string[] = [];
 
   constructor(
     private productService: ProductService
@@ -25,6 +26,12 @@ export class ProductsComponent implements OnInit {
         console.log(response);
         this.products = response;
       });
+  }
+
+  filterCategoryChange(value: string[]): void {
+    this.categoriesSelected = value;
+    console.log(value);
+
   }
 
 }

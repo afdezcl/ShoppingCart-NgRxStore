@@ -9,11 +9,13 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { PipesModule } from 'src/app/ui-controls/pipes/pipe.module';
+import { FilterCategoryPipe } from 'src/app/ui-controls/pipes/filterCategory.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
-
+    PipesModule,
     NzCardModule,
     NzGridModule,
     NzSelectModule,
@@ -26,6 +28,9 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
   declarations: [
     ProductsComponent,
     ProductCardComponent
+  ],
+  providers: [
+    FilterCategoryPipe
   ]
 })
 export class ProductsModule { }

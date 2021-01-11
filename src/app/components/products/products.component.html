@@ -5,12 +5,12 @@
         <div nz-col [nzXs]="{ span: 24 }" [nzLg]="{ span: 4, offset: 1}">
           <div class="">
             <h3>Category:</h3>
-            <nz-checkbox-wrapper style="width: 100%;">
+            <nz-checkbox-wrapper style="width: 100%;" (nzOnChange)="filterCategoryChange($event)">
               <div nz-row>
-                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="A">Men clothing</label></div>
-                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="B">Women clothing</label></div>
-                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="C">Jewelery</label></div>
-                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="D">Electronics</label></div>
+                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="men clothing">Men clothing</label></div>
+                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="women clothing">Women clothing</label></div>
+                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="jewelery">Jewelery</label></div>
+                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="electronics">Electronics</label></div>
               </div>
             </nz-checkbox-wrapper>
           </div>
@@ -46,7 +46,7 @@
 
           <div nz-row [nzGutter]="[16, 40]">
             <div nz-col class="gutter-row" [nzXs]="{ span: 12 }" [nzMd]="{ span: 8 }" [nzLg]="{ span: 6 }"
-              *ngFor="let singleProduct of products">
+              *ngFor="let singleProduct of products | filterCategory:categoriesSelected">
               <app-product-card [product]="singleProduct"></app-product-card>
             </div>
           </div>
