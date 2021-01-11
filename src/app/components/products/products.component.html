@@ -33,7 +33,7 @@
                     <span>Order by</span>
                   </nz-space-item>
                   <nz-space-item>
-                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select" [(ngModel)]="selectedOS">
+                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select" [(ngModel)]="orderSelected">
                       <nz-option nzCustomContent nzLabel="Lowest to Highest" nzValue="Lowest to Highest">Lowest to Highest</nz-option>
                       <nz-option nzCustomContent nzLabel="Highest to Lowest" nzValue="Highest to Lowest">Highest to Lowest</nz-option>
                     </nz-select>
@@ -46,7 +46,7 @@
 
           <div nz-row [nzGutter]="[16, 40]">
             <div nz-col class="gutter-row" [nzXs]="{ span: 12 }" [nzMd]="{ span: 8 }" [nzLg]="{ span: 6 }"
-              *ngFor="let singleProduct of products | filterCategory:categoriesSelected">
+              *ngFor="let singleProduct of products | filterCategory:categoriesSelected | filterOrder:orderSelected">
               <app-product-card [product]="singleProduct"></app-product-card>
             </div>
           </div>

@@ -11,6 +11,7 @@ export class ProductsComponent implements OnInit {
 
   public products: Product[];
   public categoriesSelected: string[] = [];
+  public orderSelected: string;
 
   constructor(
     private productService: ProductService
