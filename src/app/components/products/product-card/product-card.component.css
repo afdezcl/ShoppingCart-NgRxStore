@@ -1,5 +1,7 @@
 button {
     width: 90%;
+    background-color: #061529;
+    border: none;
 }
 
 nz-card {

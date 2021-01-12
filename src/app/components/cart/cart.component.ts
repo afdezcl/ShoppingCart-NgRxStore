@@ -12,7 +12,7 @@ import { AppState } from 'src/app/store/models/app-state.model';
 })
 export class CartComponent implements OnInit {
 
-  isCollapsed = false;
+  isCollapsed = true;
   shoppingItems$: Observable<Array<Product>>;
 
   constructor(

@@ -5,7 +5,7 @@ import { ProductService } from 'src/app/services/products/product.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
 
@@ -31,8 +31,6 @@ export class ProductsComponent implements OnInit {
 
   filterCategoryChange(value: string[]): void {
     this.categoriesSelected = value;
-    console.log(value);
-
   }
 
 }

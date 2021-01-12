@@ -1,19 +1,36 @@
+<div class="section-discount">
+  <div nz-row>
+    <div nz-col [nzXs]="{ span: 22, offset: 1}" [nzLg]="{ span: 18, offset: 3}">
+      <div nz-row>
+        <div nz-col [nzXs]="{ span: 24 }" [nzLg]="{ span: 4, offset: 1}"></div>
+        <div nz-col [nzXs]="{ span: 24 }" [nzLg]="{ span: 16, offset: 1}">
+          <img src="../../../assets/images/discount-banner.png" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="section-products">
   <div nz-row>
     <div nz-col [nzXs]="{ span: 22, offset: 1}" [nzLg]="{ span: 18, offset: 3}">
       <div nz-row>
         <div nz-col [nzXs]="{ span: 24 }" [nzLg]="{ span: 4, offset: 1}">
-          <div class="">
-            <h3>Category:</h3>
-            <nz-checkbox-wrapper style="width: 100%;" (nzOnChange)="filterCategoryChange($event)">
-              <div nz-row>
-                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="men clothing">Men clothing</label></div>
-                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="women clothing">Women clothing</label></div>
-                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="jewelery">Jewelery</label></div>
-                <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="electronics">Electronics</label></div>
-              </div>
-            </nz-checkbox-wrapper>
+          <div class="categories" align="center">
+            <h3 class="categories-title">Categories</h3>
           </div>
+          <nz-checkbox-wrapper style="width: 100%;" (nzOnChange)="filterCategoryChange($event)">
+            <div nz-row>
+              <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="men clothing">Men
+                  clothing</label></div>
+              <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="women clothing">Women
+                  clothing</label></div>
+              <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox
+                  nzValue="jewelery">Jewelery</label></div>
+              <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox
+                  nzValue="electronics">Electronics</label></div>
+            </div>
+          </nz-checkbox-wrapper>
         </div>
         <div nz-col [nzXs]="{ span: 24 }" [nzLg]="{ span: 16, offset: 1}">
           <div nz-row class="spinner-wrapper" *ngIf="!products">
@@ -22,11 +39,11 @@
             </div>
           </div>
 
-          <div nz-row *ngIf="products">
-            <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 12 }">
+          <div class="section-orderBy" nz-row *ngIf="products">
+            <div nz-col [nzXs]="{ span: 8 }" [nzLg]="{ span: 12 }">
               <div class="">{{ products.length }} Product(s) found</div>
             </div>
-            <div nz-col align="right" [nzXs]="{ span: 12 }" [nzLg]="{ span: 12 }">
+            <div nz-col align="right" [nzXs]="{ span: 16 }" [nzLg]="{ span: 12 }">
               <div class="">
                 <nz-space>
                   <nz-space-item>
@@ -34,8 +51,10 @@
                   </nz-space-item>
                   <nz-space-item>
                     <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select" [(ngModel)]="orderSelected">
-                      <nz-option nzCustomContent nzLabel="Lowest to Highest" nzValue="Lowest to Highest">Lowest to Highest</nz-option>
-                      <nz-option nzCustomContent nzLabel="Highest to Lowest" nzValue="Highest to Lowest">Highest to Lowest</nz-option>
+                      <nz-option nzCustomContent nzLabel="Lowest to Highest" nzValue="Lowest to Highest">Lowest to
+                        Highest</nz-option>
+                      <nz-option nzCustomContent nzLabel="Highest to Lowest" nzValue="Highest to Lowest">Highest to
+                        Lowest</nz-option>
                     </nz-select>
                   </nz-space-item>
                 </nz-space>
