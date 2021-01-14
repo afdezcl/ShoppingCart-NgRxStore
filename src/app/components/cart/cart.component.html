@@ -13,17 +13,17 @@
           </div>
           <div nz-col [nzXs]="{ span: 14 }" [nzLg]="{ span: 14 }" class="item-container-details">
             <p class="title">{{ item.description | slice:0:20 }}...</p>
-            <p class="quantity">Quantity: 1</p>
-            <button class="quantity-button">
+            <p class="quantity">Quantity: {{ item.quantity }}</p>
+            <button class="quantity-button" (click)="reduceQuantityToItem(item)">
               <i nz-icon nzType="minus" nzTheme="outline"></i>
             </button>
-            <button class="quantity-button">
+            <button class="quantity-button" (click)="addQuantityToItem(item)">
               <i nz-icon nzType="plus" nzTheme="outline"></i>
             </button>
           </div>
           <div nz-col [nzXs]="{ span: 6 }" [nzLg]="{ span: 6}" class="item-container-price" align="right">
             <i nz-icon nzType="delete" nzTheme="outline" (click)="deleteItem(item)"></i>
-            <p class="price">{{ item.price }} €</p>
+            <p class="price">{{ item.price * item.quantity }} €</p>
           </div>
         </div>
       </div>
@@ -38,17 +38,17 @@
       </ng-template>
 
       <div class="total-container" [ngStyle]="{'position': isCollapsed ? 'initial' :  'absolute'}">
-        <div nz-row>
+        <div nz-row *ngIf="totalPrice">
           <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 12 }">
             <p>SUBTOTAL</p>
           </div>
           <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 12 }" align="right">
-            <p class="price">{{calculateTotalPrice()}} €</p>
+            <p class="price">{{ totalPrice }} €</p>
           </div>
         </div>
         <div nz-row class="total-container-checkout">
           <div nz-col [nzXs]="{ span: 24 }" [nzLg]="{ span: 24 }" align="center">
-              <button nz-button nzType="primary">
+              <button nz-button nzType="primary" [disabled]="!totalPrice">
                 CHECKOUT
               </button>
           </div>

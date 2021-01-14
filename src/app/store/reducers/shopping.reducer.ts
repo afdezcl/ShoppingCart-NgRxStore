@@ -1,3 +1,4 @@
+import { stat } from 'fs';
 import { Product } from 'src/app/models/product.interface';
 import { ShoppingAction, ShoppingActionTypes } from '../actions/shopping.actions';
 
@@ -8,36 +9,23 @@ export interface ShoppingState {
 }
 
 const initialState: ShoppingState = {
-  list: [{
-    category: 'men clothing',
-    description: 'Your peeve, your everyday',
-    id: 1,
-    image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-    price: 110,
-    title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-  }],
+  list: [],
   loading: false,
   error: undefined
 };
 
 export function ShoppingReducer(state: ShoppingState = initialState, action: ShoppingAction): ShoppingState {
   switch (action.type) {
-    case ShoppingActionTypes.LOAD_SHOPPING:
+    case ShoppingActionTypes.ADD_QUANTITY_ITEM:
       return {
         ...state,
-        loading: true
-      };
-    case ShoppingActionTypes.LOAD_SHOPPING_SUCCESS:
-      return {
-        ...state,
-        list: action.payload,
+        list: state.list.map(item => item.id === action.payload.id ? { ...item, quantity: action.payload.quantity + 1 } : item),
         loading: false
       };
-
-    case ShoppingActionTypes.LOAD_SHOPPING_FAILURE:
+    case ShoppingActionTypes.REDUCE_QUANTITY_ITEM:
       return {
         ...state,
-        error: action.payload,
+        list: state.list.map(item => item.id === action.payload.id ? { ...item, quantity: action.payload.quantity - 1 } : item),
         loading: false
       };
     case ShoppingActionTypes.ADD_ITEM:

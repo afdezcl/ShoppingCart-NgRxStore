@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Product } from 'src/app/models/product.interface';
-import { AddItemAction } from 'src/app/store/actions/shopping.actions';
+import { AddItemAction, AddItemSuccessAction } from 'src/app/store/actions/shopping.actions';
 import { AppState } from 'src/app/store/models/app-state.model';
 
 @Component({
@@ -21,7 +21,8 @@ export class ProductCardComponent implements OnInit {
   }
 
   addItem(product): void {
-    this.store.dispatch(new AddItemAction(product));
+    product = { ...product, quantity: 1 };
+    this.store.dispatch(new AddItemSuccessAction(product));
   }
 
 }

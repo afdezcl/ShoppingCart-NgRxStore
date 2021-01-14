@@ -22,6 +22,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { localStorageSync } from 'ngrx-store-localstorage';
 import { FilterCategoryPipe } from './ui-controls/pipes/filterCategory.pipe';
+import { EffectsModule } from '@ngrx/effects';
+import { ShoppingEffects } from './store/effects/shopping.effects';
 
 
 registerLocaleData(en);
@@ -50,6 +52,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    EffectsModule.forRoot([ShoppingEffects]),
     StoreModule.forRoot({
       shopping: ShoppingReducer,
     }),
