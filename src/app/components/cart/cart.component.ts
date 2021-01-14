@@ -30,7 +30,7 @@ export class CartComponent implements OnInit {
   }
 
   deleteItem(product: Product): void {
-    this.store.dispatch(new DeleteItemSuccessAction(product.id));
+    this.store.dispatch(new DeleteItemAction(product.id));
   }
 
   calculateTotalPrice(): void {

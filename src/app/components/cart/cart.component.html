@@ -23,7 +23,7 @@
           </div>
           <div nz-col [nzXs]="{ span: 6 }" [nzLg]="{ span: 6}" class="item-container-price" align="right">
             <i nz-icon nzType="delete" nzTheme="outline" (click)="deleteItem(item)"></i>
-            <p class="price">{{ item.price * item.quantity }} €</p>
+            <p class="price">{{ item.price * item.quantity | number }} €</p>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
             <p>SUBTOTAL</p>
           </div>
           <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 12 }" align="right">
-            <p class="price">{{ totalPrice }} €</p>
+            <p class="price">{{ totalPrice | number }} €</p>
           </div>
         </div>
         <div nz-row class="total-container-checkout">
