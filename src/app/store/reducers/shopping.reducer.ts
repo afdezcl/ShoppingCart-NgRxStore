@@ -1,4 +1,3 @@
-import { stat } from 'fs';
 import { Product } from 'src/app/models/product.interface';
 import { ShoppingAction, ShoppingActionTypes } from '../actions/shopping.actions';
 
