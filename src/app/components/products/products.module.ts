@@ -9,6 +9,7 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 import { PipesModule } from 'src/app/ui-controls/pipes/pipe.module';
 import { FilterCategoryPipe } from 'src/app/ui-controls/pipes/filterCategory.pipe';
 import { FilterOrderPipe } from 'src/app/ui-controls/pipes/filterOrder.pipe';
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     NzSpaceModule,
     NzButtonModule,
     NzSpinModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    NzMessageModule
 
   ],
   declarations: [
