@@ -7,6 +7,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
     NzGridModule,
     NzIconModule,
     NzButtonModule,
-    NzLayoutModule
+    NzLayoutModule,
+    NzPopconfirmModule
   ],
   declarations: [
     CartComponent

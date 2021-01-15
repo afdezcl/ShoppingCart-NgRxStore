@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { Product } from 'src/app/models/product.interface';
-import { AddItemSuccessAction } from 'src/app/store/actions/shopping.actions';
+import { AddItemAction, AddItemSuccessAction, AddQuantityItemAction } from 'src/app/store/actions/shopping.actions';
 import { AppState } from 'src/app/store/models/app-state.model';
 
 @Component({
@@ -22,9 +22,9 @@ export class ProductCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addItem(product): void {
+  addItem(product: Product): void {
     product = { ...product, quantity: 1 };
-    this.store.dispatch(new AddItemSuccessAction(product));
+    this.store.dispatch(new AddItemAction(product));
     this.message.create('success', 'Product added succesfully');
   }
 

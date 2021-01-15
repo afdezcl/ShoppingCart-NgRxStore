@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Product } from 'src/app/models/product.interface';
 import { AddQuantityItemAction, DeleteItemAction, ReduceQuantityItemAction } from 'src/app/store/actions/shopping.actions';
 import { AppState } from 'src/app/store/models/app-state.model';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-cart',
@@ -17,7 +18,8 @@ export class CartComponent implements OnInit {
   public totalPrice: number;
 
   constructor(
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private nzMessageService: NzMessageService
   ) { }
 
   ngOnInit(): void {
@@ -29,8 +31,13 @@ export class CartComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
   }
 
+  cancelDeleteItem(): void {
+    this.nzMessageService.info('Remove product canceled');
+  }
+
   deleteItem(product: Product): void {
     this.store.dispatch(new DeleteItemAction(product.id));
+    this.nzMessageService.info('Product removed succesfully');
   }
 
   calculateTotalPrice(): void {
