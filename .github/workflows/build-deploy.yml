@@ -20,15 +20,6 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node- 
-          
-    - name: Cypress run
-      uses: cypress-io/github-action@v1
-      env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-      with:
-          build: npm run build
-          start: npm start
-          wait-on: http://localhost:4200 
                     
     - name: Lint && Test && Build
       run: |
@@ -36,7 +27,15 @@ jobs:
         npm run lint
         npm run test
         npm run deploy
-          
+        
+    - name: Cypress run
+      uses: cypress-io/github-action@v1
+      env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+      with:
+          start: npm start
+          wait-on: http://localhost:4200
+       
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
