@@ -7,8 +7,10 @@ import { ProductService } from 'src/app/services/products/product.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit{
 
+
+  public filteredCount = { count: 0 };
   public products: Product[];
   public categoriesSelected: string[] = [];
   public orderSelected: string;
@@ -25,11 +27,13 @@ export class ProductsComponent implements OnInit {
     this.productService.getProducts()
       .subscribe((response: Product[]) => {
         this.products = response;
+        this.filteredCount.count = this.products.length;
       });
   }
 
   filterCategoryChange(value: string[]): void {
     this.categoriesSelected = value;
+    this.filteredCount.count = this.products.length;
   }
 
 }

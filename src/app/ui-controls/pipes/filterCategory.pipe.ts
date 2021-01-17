@@ -6,11 +6,13 @@ import { Product } from 'src/app/models/product.interface';
 })
 export class FilterCategoryPipe implements PipeTransform {
 
-  transform(products: Product[], categories: string[]): Product[] {
+  transform(products: Product[], categories: string[], filterMetadata): Product[] {
     if (!categories.length) {
       return products;
     }
-    return products.filter(item => categories.some(coincidence => coincidence === item.category));
+    const filteredProducts = products.filter(item => categories.some(coincidence => coincidence === item.category));
+    filterMetadata.count = filteredProducts.length;
+    return filteredProducts;
   }
 
 }

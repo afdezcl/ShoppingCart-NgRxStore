@@ -41,7 +41,7 @@
 
           <div class="section-orderBy" nz-row *ngIf="products">
             <div nz-col [nzXs]="{ span: 8 }" [nzLg]="{ span: 12 }">
-              <div class="">{{ products.length }} Product(s) found</div>
+              <div class="">{{ filteredCount.count}} Product(s) found</div>
             </div>
             <div nz-col align="right" [nzXs]="{ span: 16 }" [nzLg]="{ span: 12 }">
               <div class="">
@@ -65,8 +65,9 @@
 
           <div nz-row [nzGutter]="[16, 40]">
             <div nz-col class="gutter-row" [nzXs]="{ span: 12 }" [nzMd]="{ span: 8 }" [nzLg]="{ span: 6 }"
-              *ngFor="let singleProduct of products | filterCategory:categoriesSelected | filterOrder:orderSelected">
+              *ngFor="let singleProduct of products | filterCategory:categoriesSelected:filteredCount | filterOrder:orderSelected">
               <app-product-card [product]="singleProduct"></app-product-card>
+
             </div>
           </div>
         </div>
