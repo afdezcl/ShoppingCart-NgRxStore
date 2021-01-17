@@ -21,14 +21,14 @@
           </div>
           <nz-checkbox-wrapper style="width: 100%;" (nzOnChange)="filterCategoryChange($event)">
             <div nz-row>
-              <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="men clothing">Men
+              <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="men clothing" data-cy="menCategory">Men
                   clothing</label></div>
-              <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="women clothing">Women
+              <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox nzValue="women clothing" data-cy="womenCategory">Women
                   clothing</label></div>
               <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox
-                  nzValue="jewelery">Jewelery</label></div>
+                  nzValue="jewelery" data-cy="jeweleryCategory">Jewelery</label></div>
               <div nz-col [nzXs]="{ span: 12 }" [nzLg]="{ span: 24 }"><label nz-checkbox
-                  nzValue="electronics">Electronics</label></div>
+                  nzValue="electronics" data-cy="electronicsCategory">Electronics</label></div>
             </div>
           </nz-checkbox-wrapper>
         </div>

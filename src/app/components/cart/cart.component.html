@@ -13,18 +13,18 @@
             <img src="{{ item.image }}" alt="item-image" height="80" width="50">
           </div>
           <div nz-col [nzXs]="{ span: 14 }" [nzLg]="{ span: 14 }" class="item-container-details">
-            <p class="title">{{ item.description | slice:0:20 }}...</p>
+            <p class="title">{{ item.title | slice:0:20 }}...</p>
             <p class="quantity">Quantity: {{ item.quantity }}</p>
-            <button class="quantity-button" (click)="reduceQuantityToItem(item)">
+            <button class="quantity-button" (click)="reduceQuantityToItem(item)" data-cy="reduceButtonQuantity">
               <i nz-icon nzType="minus" nzTheme="outline"></i>
             </button>
-            <button class="quantity-button" (click)="addQuantityToItem(item)">
+            <button class="quantity-button" (click)="addQuantityToItem(item)" data-cy="plusButtonQuantity">
               <i nz-icon nzType="plus" nzTheme="outline"></i>
             </button>
           </div>
           <div nz-col [nzXs]="{ span: 6 }" [nzLg]="{ span: 6}" class="item-container-price" align="right">
             <a nz-popconfirm nzPopconfirmTitle="Are you sure delete this product?" nzPopconfirmPlacement="bottom"
-              (nzOnConfirm)="deleteItem(item)" (nzOnCancel)="cancelDeleteItem()"><i nz-icon nzType="delete" nzTheme="outline"></i></a>
+              (nzOnConfirm)="deleteItem(item)" (nzOnCancel)="cancelDeleteItem()" data-cy="removeProductButton"><i nz-icon nzType="delete" nzTheme="outline"></i></a>
             <p class="price">{{ item.price * item.quantity | number }} €</p>
           </div>
         </div>
@@ -63,6 +63,6 @@
 <nz-layout>
   <nz-header>
     <i class="trigger" nz-icon [nzType]="isCollapsed ? 'shopping-cart' : 'close'"
-      (click)="isCollapsed = !isCollapsed"></i>
+      (click)="isCollapsed = !isCollapsed" data-cy="cartToggle"></i>
   </nz-header>
 </nz-layout>
