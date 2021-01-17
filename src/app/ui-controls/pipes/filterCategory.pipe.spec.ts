@@ -3,6 +3,7 @@ import { FilterCategoryPipe } from './filterCategory.pipe';
 
 describe('Pipe: FilterCategory', () => {
   const pipe = new FilterCategoryPipe();
+  const filteredCount = { count: 0 };
   const products: Product[] = [
     {
       category: 'women clothing',
@@ -28,13 +29,13 @@ describe('Pipe: FilterCategory', () => {
 
   it('Should return all products to NO categories selected', () => {
     const categoriesFilterSelected = [];
-    expect(pipe.transform(products, categoriesFilterSelected)).toEqual(products);
+    expect(pipe.transform(products, categoriesFilterSelected, filteredCount)).toEqual(products);
   });
 
   it('Should return only the product with JEWELERY category', () => {
     const productsReturned: Product[] = products.filter(item => item.category === 'jewelery');
     const categoriesFilterSelected = ['jewelery'];
-    expect(pipe.transform(products, categoriesFilterSelected)).toEqual(productsReturned);
+    expect(pipe.transform(products, categoriesFilterSelected, filteredCount)).toEqual(productsReturned);
   });
 
 

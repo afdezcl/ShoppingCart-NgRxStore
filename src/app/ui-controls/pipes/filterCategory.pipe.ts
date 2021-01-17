@@ -6,7 +6,7 @@ import { Product } from 'src/app/models/product.interface';
 })
 export class FilterCategoryPipe implements PipeTransform {
 
-  transform(products: Product[], categories: string[], filterMetadata): Product[] {
+  transform(products: Product[], categories: string[], filterMetadata: {count: number}): Product[] {
     if (!categories.length) {
       return products;
     }
