@@ -2,7 +2,7 @@
   <nz-card-meta nzTitle="{{ product.title }}" nzDescription="{{ product.price }} €"></nz-card-meta>
 </nz-card>
 <ng-template #coverTemplate>
-  <img alt="product-image" src="{{ product.image }}" height="200"/>
+  <img alt="product-image" src="{{ product.image }}" height="200" loading="lazy"/>
 </ng-template>
 <ng-template #actionAdd>
   <button nz-button nzType="primary" (click)="addItem(product)">Add to cart</button>
