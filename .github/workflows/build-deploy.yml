@@ -10,6 +10,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
+    - name: Cypress run
+      uses: cypress-io/github-action@v1      
     - uses: actions/setup-node@v1 #this installs node and npm for us
       with:
         node-version: '14'
@@ -18,7 +20,7 @@ jobs:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-node-    
+          ${{ runner.os }}-node-              
     - name: Lint && Test && Build
       run: |
         npm install
