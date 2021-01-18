@@ -10,6 +10,7 @@ This project uses Store and Effects as Redux architecture. Also, a lazy loading 
 * Ant Design (NG-ZORRO)
 * NgRx/Store & NgRx/Effects (as Redux pattern)
 * Jest (to unit tests)
+* Cypress (to acceptance tests)
 * Husky (as pre-commit && pre-push hooks)
 * TSLint
 
@@ -27,5 +28,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via Jest.
+Run `npm run test` to execute the unit tests via Jest.
+
+## Running acceptance tests
+
+Run `npm run e2e` to execute the unit tests via Cypress
 
